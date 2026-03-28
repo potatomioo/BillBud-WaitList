@@ -1,0 +1,220 @@
+:root {
+  --primary-blue: #072AC8;
+  --hover-blue: #0A38E8;
+  --white: #FFFFFF;
+  --black: #000000;
+  --muted-text: #6B7280;
+  --border-light: #D1D5DB;
+  --shadow-default: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--white);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+  padding: 24px 40px;
+  width: 100%;
+}
+
+.navbar .logo {
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+
+.hero-pill {
+  display: inline-block;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 9999px; /* rounded-full */
+  margin-bottom: 24px;
+}
+
+.hero-headline {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.hero-subtext {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--muted-text);
+  line-height: 1.5;
+}
+
+/* Waitlist Form */
+.waitlist-container {
+  width: 100%;
+  max-width: 560px;
+  background: var(--white);
+  /* Optional: we could put a card background here, but design says minimal single page */
+}
+
+.waitlist-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.email-input {
+  height: 48px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 0 16px;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s;
+  box-shadow: var(--shadow-default);
+}
+
+.email-input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 2px rgba(7, 42, 200, 0.2);
+}
+
+.email-input:disabled {
+  background-color: #F3F4F6;
+  color: var(--muted-text);
+  cursor: not-allowed;
+}
+
+.submit-button {
+  height: 48px;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: var(--hover-blue);
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.error-text {
+  color: #DC2626; /* red to stand out */
+  font-size: 14px;
+}
+
+.status-message {
+  text-align: center;
+  padding: 24px;
+  font-size: 18px;
+  font-weight: 600;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  box-shadow: var(--shadow-default);
+}
+
+.status-message.success {
+  color: #059669;
+  border-color: #A7F3D0;
+  background-color: #ECFDF5;
+}
+
+.status-message.conflict {
+  color: var(--primary-blue);
+  border-color: #BFDBFE;
+  background-color: #EFF6FF;
+}
+
+.status-message.error {
+  color: #DC2626;
+  border-color: #FECACA;
+  background-color: #FEF2F2;
+}
+
+/* Spin animation for loading state */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 2px solid var(--white);
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.footer-text {
+  color: var(--muted-text);
+  font-size: 14px;
+}
+
+/* Responsive constraints */
+@media (max-width: 640px) {
+  .hero-headline {
+    font-size: 40px;
+  }
+}

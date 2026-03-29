@@ -1,10 +1,13 @@
 export default function HeroSection() {
   return (
     <section className="hero-section">
-      <span className="hero-pill">Coming Soon 🎉</span>
-      <h1 className="hero-headline">Split bills. Settle up. No drama.</h1>
+      <div className="hero-brand">
+        <img src="/billbud.png" alt="BillBud Logo" className="hero-logo" />
+        <span className="hero-brand-name">BillBud</span>
+      </div>
+      <h1 className="hero-headline">Split & Share Your Bills and Expenses</h1>
       <p className="hero-subtext">
-        BillBud is coming soon. Join the waitlist and be first to know when we launch.
+        Stop chasing people for money. BillBud is launching soon, Join the exclusive waitlist for early access.
       </p>
     </section>
   );

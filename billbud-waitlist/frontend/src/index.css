@@ -15,7 +15,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   background-color: var(--white);
   color: var(--black);
   -webkit-font-smoothing: antialiased;
@@ -44,11 +44,10 @@ body {
   width: 100%;
 }
 
-.navbar .logo {
-  font-weight: 700;
-  font-size: 24px;
-  color: var(--primary-blue);
-  text-decoration: none;
+.navbar .logo-image {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 
 /* Hero Section */
@@ -58,15 +57,23 @@ body {
   margin-bottom: 40px;
 }
 
-.hero-pill {
-  display: inline-block;
-  background-color: var(--primary-blue);
-  color: var(--white);
-  font-size: 12px;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 9999px; /* rounded-full */
+.hero-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   margin-bottom: 24px;
+}
+
+.hero-logo {
+  height: 48px;
+  width: auto;
+}
+
+.hero-brand-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--black);
 }
 
 .hero-headline {
@@ -106,20 +113,33 @@ body {
 }
 
 .email-input {
-  height: 48px;
+  height: 56px;
+  background-color: var(--white);
   border: 1px solid var(--border-light);
-  border-radius: 8px;
-  padding: 0 16px;
+  border-radius: 9999px;
+  padding: 0 24px;
   font-size: 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   transition: all 0.2s;
   box-shadow: var(--shadow-default);
 }
 
 .email-input:focus {
   outline: none;
-  border-color: var(--primary-blue);
-  box-shadow: 0 0 0 2px rgba(7, 42, 200, 0.2);
+  border-color: var(--black);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.email-input.input-error {
+  border-color: #DC2626;
+  background-color: #FEF2F2;
+}
+
+.reassurance-text {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted-text);
+  margin-top: 24px;
 }
 
 .email-input:disabled {
@@ -129,23 +149,24 @@ body {
 }
 
 .submit-button {
-  height: 48px;
-  background-color: var(--primary-blue);
+  height: 56px;
+  background-color: var(--black);
   color: var(--white);
   border: none;
-  border-radius: 8px;
+  border-radius: 9999px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
-  font-family: 'Inter', sans-serif;
+  transition: transform 0.2s, background-color 0.2s;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .submit-button:hover:not(:disabled) {
-  background-color: var(--hover-blue);
+  transform: scale(1.02);
+  background-color: #1F2937;
 }
 
 .submit-button:disabled {
@@ -153,38 +174,22 @@ body {
   cursor: not-allowed;
 }
 
+.submit-button.success {
+  background-color: var(--primary-blue);
+  cursor: default;
+}
+
+.submit-button.success:hover:not(:disabled) {
+  transform: none;
+  background-color: var(--primary-blue);
+}
+
 .error-text {
   color: #DC2626; /* red to stand out */
   font-size: 14px;
+  padding-left: 16px;
 }
 
-.status-message {
-  text-align: center;
-  padding: 24px;
-  font-size: 18px;
-  font-weight: 600;
-  border: 1px solid var(--border-light);
-  border-radius: 8px;
-  box-shadow: var(--shadow-default);
-}
-
-.status-message.success {
-  color: #059669;
-  border-color: #A7F3D0;
-  background-color: #ECFDF5;
-}
-
-.status-message.conflict {
-  color: var(--primary-blue);
-  border-color: #BFDBFE;
-  background-color: #EFF6FF;
-}
-
-.status-message.error {
-  color: #DC2626;
-  border-color: #FECACA;
-  background-color: #FEF2F2;
-}
 
 /* Spin animation for loading state */
 @keyframes spin {

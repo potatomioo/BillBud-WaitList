@@ -1,7 +1,7 @@
 export default function Navbar() {
   return (
     <header className="navbar">
-      <div className="logo">BillBud</div>
+      <img src="/billbud.png" alt="BillBud Logo" className="logo-image" />
     </header>
   );
 }

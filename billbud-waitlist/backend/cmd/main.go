@@ -36,7 +36,7 @@ func main() {
 
 	api := r.Group("/api")
 	{
-		api.GET("/ping", func(c *gin.Context) {
+		api.Any("/ping", func(c *gin.Context) {
 			c.JSON(http.StatusOK, gin.H{"status": "alive"})
 		})
 		api.POST("/waitlist", handlers.AddToWaitlist(database))

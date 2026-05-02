@@ -7,7 +7,7 @@ export default function HeroSection() {
       </div>
       <h1 className="hero-headline">Split & Share Your Bills and Expenses</h1>
       <p className="hero-subtext">
-        Stop chasing people for money. BillBud is launching soon, Join the exclusive waitlist for early access.
+        Stop chasing people for money after every dinner, trip and outing. BillBud makes it simple.
       </p>
     </section>
   );
